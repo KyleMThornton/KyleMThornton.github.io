@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    display: none;
+}
+
+nav p {
+    padding: 1rem;
+}
+
+nav i {
+    padding: 1rem;
+}
+
+.banner {
+    height: 100vh;
+    background-color: #272932;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.banner span {
+    color: #F3B61F;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.projectsbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectsbutton h2 {
+    border: 3px solid white;
+    font-weight: normal;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.projectsbutton h2:hover {
+    border: 3px solid #94D1BE;
+    background-color: #94D1BE;
+}
+
+.contact {
+    padding-top: 5rem;
+    color: black;
+}
