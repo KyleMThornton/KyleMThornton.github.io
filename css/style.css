@@ -79,8 +79,8 @@ nav i {
 }
 
 .projects {
-    height: 70vh;
     color: black;
+    margin: 0 5rem 5rem 5rem;
 }
 
 .projects h2, .about h2, .contact h2 {
@@ -116,6 +116,29 @@ nav i {
     background-color: rgb(233, 233, 233);
 }
 
+.aboutwrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.aboutme {
+    width: 40rem;
+    border: #63677E solid 2px;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.skills {
+    width: 40rem;
+    border: #63677E solid 2px;
+    padding: 2rem;
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .contact {
     background-color: #272932;
     height: 30vh;
@@ -128,7 +151,7 @@ nav i {
 }
 
 .contactwrapper a {
-    padding: 2rem;
+    padding: 4rem;
     color: white;
 }
 
