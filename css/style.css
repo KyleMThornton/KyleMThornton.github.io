@@ -71,7 +71,22 @@ nav i {
     background-color: #94D1BE;
 }
 
-.contact {
-    padding-top: 5rem;
+.projects {
+    height: 70vh;
     color: black;
+}
+
+.about {
+    color: black;
+    height: 70vh;
+    background-color: rgb(233, 233, 233);
+}
+
+.contact {
+    background-color: #272932;
+    height: 40vh;
+}
+
+footer {
+    background-color: #272932;
 }
