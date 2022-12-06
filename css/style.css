@@ -106,11 +106,29 @@ nav i {
 }
 
 #project1 {
-    background-image: url("./images/taac_thumb.jpg");
+    background-image: url(../images/taac_thumb.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .projectbox:hover {
     background-color: #94D1BE;
+}
+
+.imageoverlay {
+    z-index: 2;
+    background-color: #94D1BE;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.imageoverlay:hover {
+    z-index: 2;
+    background-color: #94D1BE;
+    opacity: .5;
+    height: 100%;
+    width: 100%;
 }
 
 .about {
