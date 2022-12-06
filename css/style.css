@@ -112,7 +112,7 @@ nav i {
 
 .about {
     color: black;
-    height: 70vh;
+    padding-bottom: 5rem;
     background-color: rgb(233, 233, 233);
 }
 
@@ -130,14 +130,29 @@ nav i {
 }
 
 .skills {
-    width: 40rem;
     border: #63677E solid 2px;
     padding: 2rem;
     margin: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
+.skillsitem {
+    display: flex;
+    align-items: center;
+}
+
+.skillsitem i {
+    justify-content: left;
+}
+
+.skillsitem h3 {
+    padding-left: 2rem;
+    font-size: 2rem;
+    justify-content: right;
+    color: white;
+}
 
 .contact {
     background-color: #272932;
