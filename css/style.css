@@ -127,6 +127,10 @@ nav i {
     border: #63677E solid 2px;
     padding: 2rem;
     margin: 2rem;
+    background-color: #63677E;
+    border-radius: 1rem;
+    color: white;
+    font-size: 2rem;
 }
 
 .skills {
@@ -136,6 +140,9 @@ nav i {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #63677E;
+    border-radius: 1rem;
+    color: white;
 }
 
 .skillsitem {
