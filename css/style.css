@@ -33,9 +33,16 @@ nav i {
     padding: 1rem;
 }
 
+canvas {
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+    background-color: #272932;
+    position: absolute;
+}
+
 .banner {
     height: 100vh;
-    background-color: #272932;
     display: flex;
     justify-content: center;
     align-items: center;
