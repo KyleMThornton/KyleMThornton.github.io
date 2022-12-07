@@ -1,103 +1,50 @@
 const canvas = document.getElementById("canvas");
 
-var c = canvas.getContext("2d");
-var tx = window.innerWidth;
-var ty = window.innerHeight;
-canvas.width = tx;
-canvas.height = ty;
-//c.lineWidth= 5;
-//c.globalAlpha = 0.5;
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = '#fff';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-var mousex = 0;
-var mousey = 0;
-
-addEventListener("mousemove", function() {
-  mousex = event.clientX;
-  mousey = event.clientY;
+// Create an array of balls, each with a random position and velocity
+const balls = [...Array(5)].map(() => {
+  return {
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: Math.random() * 10 - 5,
+    vy: Math.random() * 10 - 5
+  };
 });
 
+// Set up the animation loop
+function draw() {
+  // Move each ball by its velocity
+  balls.forEach(ball => {
+    ball.x += ball.vx;
+    ball.y += ball.vy;
 
-var grav = 0.99;
-c.strokeWidth=5;
-function randomColor() {
-  return (
-    "rgba(" +
-    Math.round(Math.random() * 250) +
-    "," +
-    Math.round(Math.random() * 250) +
-    "," +
-    Math.round(Math.random() * 250) +
-    "," +
-    Math.ceil(Math.random() * 10) / 10 +
-    ")"
-  );
-}
-
-function Ball() {
-  this.color = randomColor();
-  this.radius = Math.random() * 10 + 14;
-  this.startradius = this.radius;
-  this.x = Math.random() * (tx - this.radius * 2) + this.radius;
-  this.y = Math.random() * (ty - this.radius);
-  this.dy = Math.random() * 2;
-  this.dx = Math.round((Math.random() - 0.5) * 10);
-  this.vel = Math.random() /5;
-  this.update = function() {
-    c.beginPath();
-    c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-    c.fillStyle = this.color;
-    c.fill();
-    //c.stroke();
-  };
-}
-
-var bal = [];
-for (var i=0; i<50; i++){
-    bal.push(new Ball());
-}
-
-function animate() {    
-  if (tx != window.innerWidth || ty != window.innerHeight) {
-    tx = window.innerWidth;
-    ty = window.innerHeight;
-    canvas.width = tx;
-    canvas.height = ty;
-  }
-  requestAnimationFrame(animate);
-  c.clearRect(0, 0, tx, ty);
-  for (var i = 0; i < bal.length; i++) {
-    bal[i].update();
-    bal[i].y += bal[i].dy;
-    bal[i].x += bal[i].dx;
-    if (bal[i].y + bal[i].radius >= ty) {
-      bal[i].dy = -bal[i].dy * grav;
-    } else {
-      bal[i].dy += bal[i].vel;
-    }    
-    if(bal[i].x + bal[i].radius > tx || bal[i].x - bal[i].radius < 0){
-        bal[i].dx = -bal[i].dx;
+    // Check if the ball has hit the edge of the canvas, and reverse its velocity if so
+    if (ball.x >= canvas.width || ball.x <= 0) {
+      ball.vx = -ball.vx;
     }
-    if(mousex > bal[i].x - 20 && 
-      mousex < bal[i].x + 20 &&
-      mousey > bal[i].y -50 &&
-      mousey < bal[i].y +50 &&
-      bal[i].radius < 70){
-        //bal[i].x += +1;
-        bal[i].radius +=5; 
-      } else {
-        if(bal[i].radius > bal[i].startradius){
-          bal[i].radius += -5;
-        }
-      }
-      
-    //forloop end
+    if (ball.y >= canvas.height || ball.y <= 0) {
+      ball.vy = -ball.vy;
     }
-//animation end
+  });
+
+  // Clear the canvas and draw each ball in its new position
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  balls.forEach((ball, i) => {
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, 5, 0, 2 * Math.PI); // Set the ball's radius to 5
+    ctx.fillStyle = ['#f00', '#0f0', '#00f', '#ff0', '#0ff'][i]; // Set the ball's color
+    ctx.strokeStyle = '#000'; // Set the ball's outline color
+    ctx.lineWidth = 2; // Set the ball's outline thickness
+    ctx.fill();
+    ctx.stroke(); // Draw the ball's outline
+  });
+
+  // Request another animation frame
+  requestAnimationFrame(draw);
 }
 
-animate();
-
-setInterval(function() {
-  bal.push(new Ball());
-  bal.splice(0, 1);
-}, 400);
+// Start the animation loop
+requestAnimationFrame(draw);
