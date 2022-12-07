@@ -37,7 +37,6 @@ canvas {
     z-index: -1;
     height: 100vh;
     width: 100%;
-    background-color: #272932;
     position: absolute;
 }
 
@@ -87,7 +86,8 @@ canvas {
 
 .projects {
     color: black;
-    margin: 0 5rem 5rem 5rem;
+    padding: 0 5rem 5rem 5rem;
+    background-color: white;
 }
 
 .projects h2, .about h2, .contact h2 {
@@ -191,7 +191,6 @@ canvas {
 
 .contact {
     background-color: #272932;
-    height: 30vh;
 }
 
 .contactwrapper {
