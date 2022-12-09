@@ -151,7 +151,7 @@ canvas {
 }
 
 .aboutme {
-    width: 40rem;
+    max-width: 40rem;
     border: #63677E solid 2px;
     padding: 2rem;
     margin: 2rem;
@@ -216,4 +216,38 @@ footer {
 
 footer .timer {
     padding: 1rem;
+}
+
+@media only screen and (max-device-width: 480px) {
+    
+    
+    .canvas {
+        width: 100vw;
+    }
+    
+    .banner h1 {
+        font-size: 2.5rem;
+        font-weight: lighter;
+        text-align: center;
+        padding: .5rem;
+    }
+    
+    .banner span {
+        font-size: 3rem;
+        white-space: pre;
+    }
+    
+    .projectbox {
+        min-width: 300px;
+        height: 250px;
+        border: black solid 1px;
+        margin: 1rem;
+    }
+
+    .aboutwrapper {
+        flex-direction: column;
+    }
+    .contactwrapper a {
+        padding: 2rem;
+    }
 }
