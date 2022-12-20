@@ -247,6 +247,23 @@ footer .timer {
     .aboutwrapper {
         flex-direction: column;
     }
+
+    .aboutme {
+        font-size: 2rem;
+    }
+
+    .skills {
+        font-size: 0.75rem;
+    }
+
+    .skills i {
+        padding-top: 1rem;
+    }
+
+    .skills h3 {
+        font-size: 1.5rem;
+    }
+
     .contactwrapper a {
         padding: 2rem;
     }
